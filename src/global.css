@@ -1,0 +1,248 @@
+/* ============================================================
+   Andarena Cafe — Global Styles & Design Tokens
+   Warm, rustic-industrial coffeehouse. Arabic-first, RTL.
+   ============================================================ */
+
+:root {
+  /* --- Brand palette --- */
+  --color-mustard: #E6B23E;
+  --color-mustard-dark: #C99728;
+  --color-brick: #A8562F;
+  --color-brick-dark: #7A3D22;
+  --color-wood: #5C3A22;
+  --color-forest: #35503C;
+  --color-charcoal: #1C1A17;
+  --color-cream: #FBF3E3;
+  --color-white: #FFFFFF;
+
+  /* --- Derived tones --- */
+  --color-cream-dim: #F3E7CE;
+  --color-charcoal-soft: #2B2621;
+  --color-mustard-tint: #F3D488;
+
+  /* --- Typography --- */
+  --font-display: "Aref Ruqaa", "Cairo", serif;
+  --font-body: "Cairo", "Aref Ruqaa", sans-serif;
+
+  /* --- Type scale --- */
+  --fs-hero: clamp(2.6rem, 5.5vw, 5rem);
+  --fs-h2: clamp(1.9rem, 3.4vw, 3rem);
+  --fs-h3: clamp(1.35rem, 2vw, 1.9rem);
+  --fs-body: 1.05rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.95rem;
+
+  /* --- Spacing --- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5.5rem;
+  --space-2xl: 8rem;
+
+  /* --- Layout --- */
+  --container-w: 1240px;
+  --radius-sm: 4px;
+  --radius-pill: 999px;
+
+  /* --- Motion --- */
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-charcoal);
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-w);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.section {
+  padding-block: var(--space-2xl);
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-block: var(--space-xl);
+  }
+}
+
+/* ---------- Signature micro-detail: the dash accent ----------
+   A short horizontal line above every headline — reused from the
+   brand's Instagram templates on literally every post. */
+.dash-accent {
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: var(--color-charcoal);
+  margin-bottom: var(--space-sm);
+}
+
+.dash-accent--on-dark {
+  background-color: var(--color-cream);
+}
+
+.dash-accent--on-mustard {
+  background-color: var(--color-charcoal);
+}
+
+/* ---------- Eyebrow label ---------- */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-brick-dark);
+  text-transform: none;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 2.1rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  transition: background-color 0.3s var(--ease-standard), color 0.3s var(--ease-standard), transform 0.3s var(--ease-standard);
+}
+
+.btn--solid {
+  background-color: var(--color-charcoal);
+  color: var(--color-cream);
+}
+
+.btn--solid:hover {
+  background-color: var(--color-mustard);
+  color: var(--color-charcoal);
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-cream);
+  box-shadow: inset 0 0 0 1.5px var(--color-cream);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Pill tag (repurposed IG white-rectangle mark) ---------- */
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+}
+
+/* ---------- Brick texture background ----------
+   Built with layered CSS gradients so no external image asset
+   is required; reads as mortar coursing, not a tiled photo. */
+.brick-texture {
+  background-color: var(--color-brick);
+  background-image:
+    linear-gradient(335deg, rgba(0,0,0,0.16) 23px, transparent 23px),
+    linear-gradient(155deg, rgba(0,0,0,0.16) 23px, transparent 23px),
+    linear-gradient(335deg, rgba(0,0,0,0.16) 23px, transparent 23px),
+    linear-gradient(155deg, rgba(0,0,0,0.16) 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0 0, 0 0, 29px 29px, 29px 29px;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-standard), transform 0.7s var(--ease-standard);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Focus visibility (accessibility) ---------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-forest);
+  outline-offset: 3px;
+}

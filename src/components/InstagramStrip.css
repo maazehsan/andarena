@@ -1,0 +1,52 @@
+.ig {
+  background-color: var(--color-cream);
+}
+
+.ig__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.ig__heading .dash-accent {
+  position: absolute;
+  top: -1.5rem;
+}
+
+.ig__cta {
+  padding: 0.7rem 1.6rem;
+  font-size: 0.9rem;
+}
+
+.ig__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+
+.ig__cell {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.ig__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ig__cell:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+  .ig__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

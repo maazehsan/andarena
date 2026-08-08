@@ -1,0 +1,23 @@
+.about {
+  background-color: var(--color-cream);
+}
+
+.about__inner {
+  max-width: 720px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__dash {
+  margin-inline: auto;
+}
+
+.about__text {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  line-height: 1.75;
+  color: var(--color-charcoal);
+  margin-top: var(--space-sm);
+}
