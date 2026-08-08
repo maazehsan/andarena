@@ -15,7 +15,7 @@ export default function Footer() {
           <a href="https://instagram.com/andarena_coffee" target="_blank" rel="noreferrer" aria-label="إنستقرام">
             IG
           </a>
-          <a href="https://wa.me/966000000000" target="_blank" rel="noreferrer" aria-label="واتساب">
+          <a href="https://wa.me/966501264631" target="_blank" rel="noreferrer" aria-label="واتساب">
             WA
           </a>
           <a href="https://tiktok.com/@andarena_coffee" target="_blank" rel="noreferrer" aria-label="تيك توك">
