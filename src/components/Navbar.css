@@ -134,7 +134,7 @@
 
 @media (max-width: 860px) {
   .navbar__links,
-  .navbar__cta {
+  .navbar__inner > .navbar__cta {
     display: none;
   }
   .navbar__hamburger {
